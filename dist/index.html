@@ -1,32 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+
 </head>
+
 <body>
-<div class= "showsInfo"></div>
+    <div class="showsInfo"></div>
 
+    <input type="text" placeholder="search" id="search-bar">
+    <button>click here!</button>
 
-     <!-- template for handle bars -->
-          <script id="ShowInfo" type="text/x-handlebars-template">
-            <ul>
-              {{#each menu}}
-              
-              {{/each}}
-            </ul>
-          </script>
-          <!-- not real!!!! -->
+    <script id="showInfo" type="text/x-handlebars-template">
+
+        {{#each menu}}
         
+             <div class="show">
+                <p>{{premiered}}</p> 
+                <h2 class="name">{{name}}</h2>
+                <img class="imgS" src={{mediumImg}}>
 
+            </div>
+        {{/each}}
+        
+    </script>
 
-
-
-<script src="tempo.js"></script>
-<script src="renderer.js"></script>
-<script src="main.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <script src="tempo.js"></script>
+    <script src="renderer.js"></script>
+    <script src="main.js"></script>
 </body>
+
 </html>

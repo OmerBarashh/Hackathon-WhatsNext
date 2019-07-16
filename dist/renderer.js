@@ -1,9 +1,7 @@
-
 class Render {
     constructor() {
 
     }
-    
 
     renderer(shows) {
 
@@ -11,7 +9,8 @@ class Render {
         const source = $('ShowInfo').html();
         const template = Handlebars.compile(source);
 
-        const newHTML = template({menu:showws});
+        const newHTML = template({menu:shows});
         $('.showsInfo').append(newHTML);
     }
 }
+
