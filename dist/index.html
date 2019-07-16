@@ -3,23 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Whats Next</title>
+    <script src="https://kit.fontawesome.com/b2a1daf7be.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
 </head>
 <body>
+    <div id="title">TV NeXt</div>
+    <div class = 'row'>
+    <div  id="routeBar" class="col s12 m12 l12">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    </div>
+    <div class='center'>
+    <input class="search" placeholder = 'Enter your 5 favorite shows'></input>
+</div>
 <div class= "showsInfo"></div>
-
-
-     <!-- template for handle bars -->
-          <script id="ShowInfo" type="text/x-handlebars-template">
+    
+        <script id="ShowInfo" type="text/x-handlebars-template">
             <ul>
               {{#each menu}}
               
               {{/each}}
             </ul>
           </script>
-          <!-- not real!!!! -->
         
 
 
@@ -28,5 +42,6 @@
 <script src="tempo.js"></script>
 <script src="renderer.js"></script>
 <script src="main.js" ></script>
+
 </body>
 </html>
