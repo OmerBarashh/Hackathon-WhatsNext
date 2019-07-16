@@ -1,47 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" type="text/css">
-    <title>Whats Next</title>
-    <script src="https://kit.fontawesome.com/b2a1daf7be.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 
 </head>
+
 <body>
-    <div id="title">TV NeXt</div>
-    <div class = 'row'>
-    <div  id="routeBar" class="col s12 m12 l12">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-    </div>
-    <div class='center'>
-    <input class="search" placeholder = 'Enter your 5 favorite shows'></input>
-</div>
-<div class= "showsInfo"></div>
-    
-        <script id="ShowInfo" type="text/x-handlebars-template">
-            <ul>
-              {{#each menu}}
-              
-              {{/each}}
-            </ul>
-          </script>
+    <div class="showsInfo"></div>
+
+    <input type="text" placeholder="search" id="search-bar">
+    <button>click here!</button>
+
+    <script id="showInfo" type="text/x-handlebars-template">
+
+        {{#each menu}}
         
+             <div class="show">
+                <p>{{premiered}}</p> 
+                <h2 class="name">{{name}}</h2>
+                <img class="imgS" src={{mediumImg}}>
 
+            </div>
+        {{/each}}
+        
+    </script>
 
-
-
-<script src="tempo.js"></script>
-<script src="renderer.js"></script>
-<script src="main.js" ></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <script src="tempo.js"></script>
+    <script src="renderer.js"></script>
+    <script src="main.js"></script>
 </body>
+
 </html>
