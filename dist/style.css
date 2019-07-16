@@ -1,45 +1,16 @@
-:root{
---prime-color: #C3002F;
---sub-prime:
+:root {
+    --prime: #000000 ;
+    --sub-prime: #FD0E35;
 }
-
 body{
-    background-color:  #d9d9d9;
-    position: relative;
-    
-
+    background-color : var(--prime);
+    color: var(--sub-prime);
 }
-#title{
-    width: 100%;
-    font-style: unset;
-    color: #ff3300;
-    font-size: 10vh;
-    text-shadow: 2px 2px 2px rgb(41, 26, 30);
-    
-}
-#routeBar{
-position: absolute;
-background-color: #C3002F;
-height: 6vh;
-width: 100%;
-border-radius: 15px;
-transition: height 1s;
-}
-#routeBar:hover{
-    height: 18vh;
-}
-.center{
-    display: flex;
-    justify-content: center;
-    padding-top: 25vh;
-}
-.search
-{
-    
-    position: absolute;
+#title {
     text-align: center;
-    width: 50vh;
-    height: 5vh;
-    border-radius: 15px;
-    border : 1px solid #262626;
+    font-size: calc(20px + 6vw);
+}
+.bar{
+    display: grid;
+    grid-template-columns: 
 }
