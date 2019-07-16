@@ -1,7 +1,7 @@
 const request = require("request")
 const express = require('express')
 const router = express.Router()
-const Show = require("../dist/show")
+const Show = require("../model/show")
 const bodyParser = require('body-parser')
 // const path = require('path')
 
@@ -43,8 +43,7 @@ router.get("/shows",function(req,res){
 router.post('/show', function (req, res) {
     let info = req.body
      console.log(req.body)
-    let s1 = new Show(info)
-    s1.save()
+    new Show(info).save()
 
     res.end("saved")
 })
