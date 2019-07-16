@@ -32,7 +32,7 @@ router.get("/show/:showname", function (req, res) {
 
 router.get("/shows",function(req,res){
     Show.find({},function(err,show){
-    res.send(city)
+    res.send()
     })
 })
 
@@ -47,7 +47,6 @@ router.post("/show" , function(req,res){
 router.delete("/show/:showname",function(req,res){
     let show = req.params.showname 
     City.findOneAndDelete({ "name" : show}).then(function(){
-
     })
     res.end()
 })
