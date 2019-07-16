@@ -26,15 +26,19 @@ class TempoManager {
         })
     }
 
+
     $.get(`/shows`, function (response) { })
 
 
     $.post(`/show`, Data, function (response) {
 })
 
-$.ajax({
+    deleteFromWatched()
+
+    $.ajax({
     method: "DELETE",
     url: `/show/${showname}`,
-    success: function () {
-    }
-}) }
+    success: function (){}
+    }) 
+
+
