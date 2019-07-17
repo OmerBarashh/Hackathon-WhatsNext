@@ -23,7 +23,6 @@ const wishListLoadPage = async function () {
     await render.wishListRender(d)
 }
 
-//////////////////////////////////////////////////////////////////////
 
 const showSearch = async function () {
     const input = $("#input").val()
@@ -32,7 +31,7 @@ const showSearch = async function () {
     await render.renderer(d)
 }
 
-///////////////////////////////////////////////////
+
 $("body").on("click", ".blackListButton", function () {
     const name = $(this).siblings('h2').text()
     tempMeneger.blackListSave(name)
@@ -47,11 +46,3 @@ $("body").on("click", ".wishListButton", function () {
     const name = $(this).siblings('h2').text()
     tempMeneger.wishListSave(name)
 })
-
-///////////////////////////////////////////
-
-// $("body").on("click", ".deletebutton", function () {
-//     const name = $(this).siblings('h2').text()
-//     tempMeneger.removeCity(name)
-//     location.reload()
-// })
