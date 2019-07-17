@@ -1,55 +1,69 @@
-const tempManager = new TempoManager
+const tempMeneger = new TempManager
 const render = new Render
 
 
-const loadPage = async function () {
-    await tempManager.getDataFromDB()
-    render.renderer(tempManager.watchedShowsData,'watchedShowsData')
-    console.log(tempManager.watchedShowsData)
+
+const blackListLoadPage = async function () {
+    await tempMeneger.blackListDB()
+    const d = tempMeneger.blackList
+    await render.blackListRender(d)
 }
 
-const handleSearch = async function () {
-    $('#container').empty()
-    let input = $("#cityInput").val()
-    await tempManager.getCityData(input)
-    render.renderer(tempManager.watchedShowsData)
-    // console.log(tempManager.cityData)
+
+const watchedShowsLoadPage = async function () {
+    await tempMeneger.watchedShowsDB()
+    const d = tempMeneger.watchedShows
+    await render.watchedShowRender(d)
 }
 
-$('body').on('click', '#search', function () {
-    handleSearch()
 
+const wishListLoadPage = async function () {
+    await tempMeneger.wishListDB()
+    const d = tempMeneger.wishList
+    await render.wishListRender(d)
+}
+
+//////////////////////////////////////////////////////////////////////
+
+const showSearch = async function () {
+    const input = $("#input").val()
+    await tempMeneger.getShowData(input)
+    const d = tempMeneger.standby
+    await render.renderer(d)
+}
+
+///////////////////////////////////////////////////
+$("body").on("click", ".blackListButton", function () {
+    const name = $(this).siblings('h2').text()
+    tempMeneger.blackListSave(name)
 })
 
-$('body').on('click', '.savebutton', function () {
-    let name = $(this).siblings('h2').text().slice(1)
-    tempManager.saveCity(name)
-    console.log(name)
+$("body").on("click", ".watchedShowButton", function () {
+    const name = $(this).siblings('h2').text()
+    tempMeneger.watchedShowSave(name)
 })
 
-$('body').on('click', '.deletebutton', function () {
-    console.log("remove")
-    let name = $(this).siblings('h2').text().slice(1)
-    console.log(name)
-    tempManager.removeCity(name)
+$("body").on("click", ".wishListButton", function () {
+    const name = $(this).siblings('h2').text()
+    tempMeneger.wishListSave(name)
 })
 
-loadPage()
+///////////////////////////////////////////
 
+$("body").on("click", ".removeSohwButton", function () {
+    const name = $(this).siblings('h2').text()
+    tempMeneger.watchedShowsRemove(name)
+    location.reload()
+})
 
+$("body").on("click", ".removeWishListButton", function () {
+    const name = $(this).siblings('h2').text()
+    tempMeneger.wishListRemove(name)
+    location.reload()
+})
 
-
-
-
-
-// let inputt = document.getElementById("cityInput");
-// // Execute a function when the user releases a key on the keyboard
-// inputt.addEventListener("keyup", function (event) {
-//   // Number 13 is the "Enter" key on the keyboard
-//   if (event.keyCode === 13) {
-//     // Cancel the default action, if needed
-//     // event.preventDefault();
-//     // Trigger the button element with a click
-//     document.getElementById("search").click();
-//   }
-// });
+$("body").on("click", ".removeSohwButton", function () {
+    const name = $(this).siblings('h2').text()
+    tempMeneger.watchedShowsRemove(name)
+    location.reload()
+})
