@@ -26,7 +26,7 @@ router.get("/show/:showname", function (req, res) {
             summary:data.summary,
             runTime:data.runtime,
             status:data.status,
-            id:data.id,
+            id:data.id
         }
 
         res.send(newData)
