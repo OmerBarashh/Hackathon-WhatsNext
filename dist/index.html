@@ -1,27 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style.css" type="text/css">
     <title>Whats Next</title>
     <script src="https://kit.fontawesome.com/b2a1daf7be.js"></script>
-</head>
-<body>
-    <div id="title">TV NeXt</div>
-    <div class = 'row'>
-    <div  id="routeBar" class="col s12 m12 l12">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-    </div>
-    <div class='center'>
-    <input class="search" placeholder = 'Enter your 5 favorite shows'></input>
-</div>
 
-    <script type="text/javascript" src="js/materialize.min.js"></script>
+</head>
+
+<body>
+
+    <button id ="watchedShowButton" onclick="watchedShowsLoadPage()" >watchedShow</button>
+    <button id ="blackListButton"onclick="blackListLoadPage()">blackList</button>
+    <button id ="wishListButton"onclick="wishListLoadPage()">wishList</button>
+
+  <input type="text" placeholder="search" id="input">
+  <button id="searchbutton" onclick="showSearch()">Search</button>
+
+  <script id="template" type="text/x-handlebars-template">
+
+    {{#each menu}}
+    
+    <div class="show">
+      <p>{{premiered}}</p> 
+      <h2 class="name">{{name}}</h2>
+      <img class="imgS" src={{mediumImg}}>
+      <button class ="watchedShowButton" >watchedShow</button>
+      <button class ="blackListButton">blackList</button>
+      <button class ="wishListButton">wishList</button>
+
+      
+    </div>
+    {{/each}}
+    
+  </script>
+
+
+  <div class="showsInfo">
+
+  </div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+  <script src="tempo.js"></script>
+  <script src="renderer.js"></script>
+  <script src="main.js"></script>
+
 </body>
+
 </html>
