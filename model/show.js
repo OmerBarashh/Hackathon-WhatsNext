@@ -4,10 +4,10 @@ const Schema = mongoose.Schema
 
 
 
-const blackListSchema = new Schema({
+const ShowSchema = new Schema({
     name: String,
     language : String,
-    genres: [String],
+    genres: Array,
     premiered: Date,
     rating: Number,
     mediumImg: String,
@@ -19,6 +19,6 @@ const blackListSchema = new Schema({
 })
 
 
-const  blackList = mongoose.model("blackList", blackListSchema)
+const  Show = mongoose.model("show", ShowSchema)
 
-module.exports = blackList
+module.exports = Show
