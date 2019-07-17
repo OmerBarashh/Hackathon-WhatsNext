@@ -1,16 +1,74 @@
 :root {
     --prime: #000000 ;
-    --sub-prime: #FD0E35;
+    --sub-prime: #8B008B;
+    --third:#EDECE5 ;
+    font-family: 'Nunito Sans', sans-serif;
 }
 body{
     background-color : var(--prime);
-    color: var(--sub-prime);
+    color: var(--prime);
+    margin: 0;
+    padding: 0;
 }
-#title {
-    text-align: center;
-    font-size: calc(20px + 6vw);
+.title>div{
+    font-size: calc(12px + 8vw);
+    margin-left: 10px;
 }
-.bar{
+
+
+
+.title{
+    height:calc(20px + 8vw);
+    background-color:var(--sub-prime);
     display: grid;
-    grid-template-columns: 
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "l m"
 }
+
+
+.menu{
+    background-color: #ff8566 ;
+    height:0;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    overflow-y: hidden;
+    transition: height 1s;
+}
+.activated{
+height:30vh;
+}
+
+
+
+
+
+
+/* this is my nav bar */
+.X{
+    display: inline-block;
+    cursor: pointer;
+    justify-self: right;
+    align-self: center;
+    margin-right:10px;
+  }
+  
+  .bar1, .bar2, .bar3 {
+      
+    grid-area: m;
+    width: 7vw;
+    height: 5px;
+    background-color:var(--prime);
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  .change .bar1 {
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+  
+  .change .bar2 {opacity: 0;}
+  
+  .change .bar3 {
+    transform: rotate(45deg) translate(-8px, -8px);
+  }

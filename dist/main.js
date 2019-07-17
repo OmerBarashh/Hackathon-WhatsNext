@@ -55,3 +55,49 @@ $("body").on("click", ".wishListButton", function () {
 //     tempMeneger.removeCity(name)
 //     location.reload()
 // })
+
+
+
+////////FOR STYLE DO NOT TOUCH !!!!
+function myFunction(x) {
+    x.classList.toggle("change");
+  }
+
+  let a = 0
+$(".bar1").click(function(){
+    if(a===0){
+
+      a=1
+        $('div.menu').addClass("activated")
+    }
+    else{
+        a=0
+        $('div.menu').removeClass("activated")
+    }
+    
+})
+$(".bar2").click(function(){
+    if(a===0){
+
+      a=1
+        $('div.menu').addClass("activated")
+    }
+    else{
+        a=0
+        $('div.menu').removeClass("activated")
+    }
+    
+})
+$(".bar3").click(function(){
+    if(a===0){
+
+      a=1
+        $('div.menu').addClass("activated")
+    }
+    else{
+        a=0
+        $('div.menu').removeClass("activated")
+    }
+    
+})
+///////////////////////////////////
