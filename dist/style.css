@@ -1,0 +1,16 @@
+:root {
+    --prime: #000000 ;
+    --sub-prime: #FD0E35;
+}
+body{
+    background-color : var(--prime);
+    color: var(--sub-prime);
+}
+#title {
+    text-align: center;
+    font-size: calc(20px + 6vw);
+}
+.bar{
+    display: grid;
+    /* grid-template-columns:  */
+}

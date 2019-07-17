@@ -77,3 +77,4 @@ $("body").on("click", ".removeBlackListButton", async function () {
     await blackListLoadPage()
     // await location.reload()
 })
+
