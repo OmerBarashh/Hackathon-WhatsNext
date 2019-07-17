@@ -1,4 +1,5 @@
 class Render {
+    
     constructor() {
 
     }
