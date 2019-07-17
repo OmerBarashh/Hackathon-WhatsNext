@@ -7,14 +7,9 @@ class Render {
     renderer(shows,listName) {
 
         $('.showsInfo').empty()
-        const source = $(`#${listName}-template`).html();
-        const template = Handlebars.compile(source);
-        const newHTML = template({menu:shows});
-        $('.showsInfo').append(newHTML);
+        const source = $(`#${listName}-template`).html();  
+        const template = Handlebars.compile(source)
+        const newHTML = template({menu : shows})
+        $('.showsInfo').append(newHTML)
     }
-
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> master

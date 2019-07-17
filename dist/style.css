@@ -12,5 +12,5 @@ body{
 }
 .bar{
     display: grid;
-    grid-template-columns: 
+    /* grid-template-columns:  */
 }
