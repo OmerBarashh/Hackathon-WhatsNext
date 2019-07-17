@@ -10,30 +10,94 @@
 </head>
 
 <body>
-    <div class="showsInfo"></div>
+    <button id ="watchedShowButton" onclick="watchedShowsLoadPage()" >watchedShow</button>
+    <button id ="blackListButton"onclick="blackListLoadPage()">blackList</button>
+    <button id ="wishListButton"onclick="wishListLoadPage()">wishList</button>
 
-    <input type="text" placeholder="search" id="search-bar">
-    <button>click here!</button>
+  <input type="text" placeholder="search" id="input">
+  <button id="searchbutton" onclick="showSearch()">Search</button>
 
-    <script id="showInfo" type="text/x-handlebars-template">
+  <script id="template" type="text/x-handlebars-template">
 
-        {{#each menu}}
-        
-             <div class="show">
-                <p>{{premiered}}</p> 
-                <h2 class="name">{{name}}</h2>
-                <img class="imgS" src={{mediumImg}}>
+    {{#each menu}}
+    
+    <div class="show">
+      <p>{{premiered}}</p> 
+      <h2 class="name">{{name}}</h2>
+      <img class="imgS" src={{mediumImg}}>
+      <button class ="watchedShowButton" >watchedShow</button>
+      <button class ="blackListButton">blackList</button>
+      <button class ="wishListButton">wishList</button>
 
-            </div>
-        {{/each}}
-        
-    </script>
+      
+    </div>
+    {{/each}}
+    
+  </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-    <script src="tempo.js"></script>
-    <script src="renderer.js"></script>
-    <script src="main.js"></script>
+  <script id="watchedShowtemplate" type="text/x-handlebars-template">
+
+    {{#each menu}}
+    
+    <div class="show">
+      <p>{{premiered}}</p> 
+      <h2 class="name">{{name}}</h2>
+      <img class="imgS" src={{mediumImg}}>
+      <button class ="removeSohwButton">remove show</button>
+
+      
+    </div>
+    {{/each}}
+    
+  </script>
+
+
+  <script id="blackListtemplate" type="text/x-handlebars-template">
+
+    {{#each menu}}
+    
+    <div class="show">
+      <p>{{premiered}}</p> 
+      <h2 class="name">{{name}}</h2>
+      <img class="imgS" src={{mediumImg}}>
+      <button class ="removeBlackListButton" >remove from blacklist</button>
+
+      
+    </div>
+    {{/each}}
+    
+  </script>
+
+  
+  <script id="wishListtemplate" type="text/x-handlebars-template">
+
+    {{#each menu}}
+    
+    <div class="show">
+      <p>{{premiered}}</p> 
+      <h2 class="name">{{name}}</h2>
+      <img class="imgS" src={{mediumImg}}>
+      <button class ="watchedShowButton" >watchedShow</button>
+      <button class ="removeWishListButton">remove wishList</button>
+
+      
+    </div>
+    {{/each}}
+    
+  </script>
+
+  <div class="showsInfo">
+
+  </div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+  <script src="tempo.js"></script>
+  <script src="renderer.js"></script>
+  <script src="main.js"></script>
+
 </body>
 
 </html>
