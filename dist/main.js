@@ -23,6 +23,7 @@ const wishListLoadPage = async function () {
     await render.wishListRender(d)
 }
 
+//////////////////////////////////////////////////////////////////////
 
 const showSearch = async function () {
     const input = $("#input").val()
@@ -31,7 +32,7 @@ const showSearch = async function () {
     await render.renderer(d)
 }
 
-
+///////////////////////////////////////////////////
 $("body").on("click", ".blackListButton", function () {
     const name = $(this).siblings('h2').text()
     tempMeneger.blackListSave(name)
@@ -47,58 +48,22 @@ $("body").on("click", ".wishListButton", function () {
     tempMeneger.wishListSave(name)
 })
 
-
 ///////////////////////////////////////////
 
-// $("body").on("click", ".deletebutton", function () {
-//     const name = $(this).siblings('h2').text()
-//     tempMeneger.removeCity(name)
-//     location.reload()
-// })
-
-
-
-////////FOR STYLE DO NOT TOUCH !!!!
-function myFunction(x) {
-    x.classList.toggle("change");
-  }
-
-  let a = 0
-$(".bar1").click(function(){
-    if(a===0){
-
-      a=1
-        $('div.menu').addClass("activated")
-    }
-    else{
-        a=0
-        $('div.menu').removeClass("activated")
-    }
-    
+$("body").on("click", ".removeSohwButton", function () {
+    const name = $(this).siblings('h2').text()
+    tempMeneger.watchedShowsRemove(name)
+    location.reload()
 })
-$(".bar2").click(function(){
-    if(a===0){
 
-      a=1
-        $('div.menu').addClass("activated")
-    }
-    else{
-        a=0
-        $('div.menu').removeClass("activated")
-    }
-    
+$("body").on("click", ".removeWishListButton", function () {
+    const name = $(this).siblings('h2').text()
+    tempMeneger.wishListRemove(name)
+    location.reload()
 })
-$(".bar3").click(function(){
-    if(a===0){
 
-      a=1
-        $('div.menu').addClass("activated")
-    }
-    else{
-        a=0
-        $('div.menu').removeClass("activated")
-    }
-    
+$("body").on("click", ".removeSohwButton", function () {
+    const name = $(this).siblings('h2').text()
+    tempMeneger.watchedShowsRemove(name)
+    location.reload()
 })
-///////////////////////////////////
-
